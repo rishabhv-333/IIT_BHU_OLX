@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<body>
+		<!-- content-starts-here -->
+		<div class="content">
+			<div class="categories">
+				<div class="container">
+
+					{% for category in all_category %}
+
+					<div class="col-md-2 focus-grid">
+						<a href="{% url 'products:product_list_category' category.slug  %}">
+							<div class="focus-border">
+								<div class="focus-layout">
+									<div class="focus-image">
+										<!-- <i class="fa fa-mobile"></i> -->
+										<img src="{{category.image.url}}" title="" alt="" />
+									</div>
+									<h4 class="clrchg">{{category}}</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					{% endfor %}
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+</body>
+
+{% endblock body %}

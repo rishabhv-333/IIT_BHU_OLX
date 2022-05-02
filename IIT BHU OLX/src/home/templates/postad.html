@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+<!-- Submit Ad -->
+<div class="submit-ad main-grid-border">
+<div class="container">
+<h2 class="head">Post an Ad</h2>
+<form method="POST">
+<div class="post-ad-form">
+  <div class="personal-details" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit" name="button">Submit ad</button>
+    </div>
+</div>
+</form>
+</div>
+</div>
+<!-- // Submit Ad -->
+{% endblock body %}
